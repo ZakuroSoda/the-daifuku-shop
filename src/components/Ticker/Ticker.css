@@ -1,0 +1,32 @@
+:root {
+    --height: 150px;
+    --speed: 20s;
+}
+
+.ticker-tape {
+     background-color: #48284A;
+     overflow: hidden;
+     width: 100%;
+}
+
+.ticker {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker var(--speed) linear infinite;
+}
+
+.ticker-text {
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

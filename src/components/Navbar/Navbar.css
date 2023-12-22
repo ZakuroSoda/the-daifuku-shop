@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #FFF7AE;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.navbar-shop a {
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+}
+
+.navbar-shop a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar-shop a:hover::after {
+    width: 100%;
+}
+
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-nav li  {
+    margin-right: 15px;
+}
+
+.navbar-nav li:last-child {
+    margin-right: 0;
+}
+
+.navbar-icon {
+    height: 18px;
+}

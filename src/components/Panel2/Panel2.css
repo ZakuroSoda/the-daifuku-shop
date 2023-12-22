@@ -1,5 +1,59 @@
 .panel2 {
     width: 100%;
     height: 90vh;
-    background-color: #FFE1C6;
+    /* background-color: #FFE1C6; */
 }
+
+.panel2-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.panel2-list-group {
+    display: flex;
+    flex: 0 0 calc(20%); /* For bigger screens, 5 items on one row */
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    margin-bottom: 20px;
+  }
+
+.panel2-list-image {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .panel2-list-group {
+      flex: 0 0 calc(33.33%); /* On smaller screens, 3 items on one row */
+    }
+  }
+
+.panel2-list-text a {
+    font-size: 4vh;
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+}
+
+.panel2-list-text a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.panel2-list-text a:hover::after {
+    width: 100%;
+}
+

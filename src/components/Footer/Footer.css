@@ -18,7 +18,7 @@
 }
 
 .footer-section {
-    padding: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
 }
 
 .footer-section a {
@@ -48,15 +48,19 @@
 }
 
 .footer-newsletter {
-    padding: 0 2rem 2rem 2rem;
+    padding: 1rem 2rem 2rem 2rem;
 }
 
 .footer-newsletter-input {
     width: 30%;
     padding: 0.8rem;
-    margin: 1rem 0 0 0;
+    margin: 1rem 0 1rem 0;
     border: none;
     border-radius: 10px
+}
+
+.footer-newsletter-input:focus {
+    outline: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -78,8 +82,4 @@
     .footer-newsletter-input {
         width: 100%;
     }
-}
-
-.footer-newsletter-input:focus {
-    outline: none;
 }

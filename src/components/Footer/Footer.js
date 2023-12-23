@@ -45,7 +45,6 @@ function Footer() {
           <p>Receive updates, access to deals and more...</p>
           <form action='#'>
             <input className="footer-newsletter-input" type="email" placeholder="Enter your email" />
-            
           </form>
         </div>
       </div>

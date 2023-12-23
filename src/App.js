@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Panel1 from './components/Panel1/Panel1';
 import Panel2 from './components/Panel2/Panel2';
+import Panel3 from './components/Panel3/Panel3';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="body">
         <Panel1 />
         <Panel2 />
+        <Panel3 />
       </div>
       <Footer />
     </div>

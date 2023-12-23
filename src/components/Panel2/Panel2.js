@@ -7,6 +7,10 @@ import mandarin from "./mandarin.jpg";
 import pineapple from "./pineapple.jpg";
 import strawberry from "./strawberry.jpg";
 
+import gluten from "./gluten.svg";
+import sugar from "./sugar.svg";
+import vegan from "./vegan.svg";
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -19,24 +23,49 @@ function Panel2() {
     <div className="panel2">
       <div className="panel2-list">
         <div className="panel2-list-group" data-aos="fade-up" data-aos-delay="0">
-          <img className="panel2-list-image" src={banana} alt="banana" />
-          {/* <p className="panel2-list-text"><a href="#"> Banana </a></p> */}
+          <a href="#">
+            <img className="panel2-list-image" src={banana} alt="banana" />
+            {/* <p className="panel2-list-text"><a href="#"> Banana </a></p> */}
+          </a>
         </div>
         <div className="panel2-list-group" data-aos="fade-up" data-aos-delay="100">
-          <img className="panel2-list-image" src={kiwi} alt="kiwi" />
-          {/* <p className="panel2-list-text"><a href="#"> Kiwi </a></p> */}
+          <a href="#">
+            <img className="panel2-list-image" src={kiwi} alt="kiwi" />
+            {/* <p className="panel2-list-text"><a href="#"> Kiwi </a></p> */}
+          </a>
         </div>
         <div className="panel2-list-group" data-aos="fade-up" data-aos-delay="200">
-          <img className="panel2-list-image" src={mandarin} alt="mandarin" />
-          {/* <p className="panel2-list-text"><a href="#"> Mandarin </a></p> */}
+          <a href="#">
+            <img className="panel2-list-image" src={mandarin} alt="mandarin" />
+            {/* <p className="panel2-list-text"><a href="#"> Mandarin </a></p> */}
+          </a>
         </div>
         <div className="panel2-list-group" data-aos="fade-up" data-aos-delay="300">
-          <img className="panel2-list-image" src={pineapple} alt="pineapple" />
-          {/* <p className="panel2-list-text"><a href="#"> Pineapple </a></p> */}
+          <a href="#">
+            <img className="panel2-list-image" src={pineapple} alt="pineapple" />
+            {/* <p className="panel2-list-text"><a href="#"> Pineapple </a></p> */}
+          </a>
         </div>
         <div className="panel2-list-group" data-aos="fade-up" data-aos-delay="400">
-          <img className="panel2-list-image" src={strawberry} alt="strawberry" />
-          {/* <p className="panel2-list-text"><a href="#"> Strawberry </a></p> */}
+          <a href="#">
+            <img className="panel2-list-image" src={strawberry} alt="strawberry" />
+            {/* <p className="panel2-list-text"><a href="#"> Strawberry </a></p> */}
+          </a>
+        </div>
+      </div>
+
+      <div className="panel2-info">
+        <div className="panel2-info-group" data-aos="fade-right" data-aos-delay="0">
+          <img className="panel2-info-image" src={gluten} alt="gluten" />
+          <p className="panel2-info-text"> Gluten Free </p>
+        </div>
+        <div className="panel2-info-group" data-aos="fade-up" data-aos-delay="0">
+          <img className="panel2-info-image" src={sugar} alt="sugar" />
+          <p className="panel2-info-text"> No Added Sugar </p>
+        </div>
+        <div className="panel2-info-group" data-aos="fade-left" data-aos-delay="0">
+          <img className="panel2-info-image" src={vegan} alt="vegan" />
+          <p className="panel2-info-text"> Vegan </p>
         </div>
       </div>
     </div>

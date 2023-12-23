@@ -6,3 +6,8 @@
 3. Secondary: #FFF7AE
 4. Accent: #48284A
 5. Accent-Light: #916C80
+
+### Standardisation
+
+1. Database: snake_case
+2. JavaScript: camelCase

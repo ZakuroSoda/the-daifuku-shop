@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 
 import discordIcon from './discord-icon.svg';
@@ -6,6 +6,15 @@ import instagramIcon from './instagram-icon.svg';
 import emailIcon from './email-icon.svg';
 
 function Footer() {
+
+  const [newsletterUser, setNewsletterUser] = useState(''); 
+
+  function handleNewsletterUser(e) {
+    e.preventDefault();
+    setNewsletterUser(e.target.value);
+    console.log(newsletterUser);
+  }
+
   return (
     <>
       <div className="footer">
@@ -43,8 +52,14 @@ function Footer() {
         <div className="footer-newsletter">
           <h2 className="logo-text">Newsletter</h2>
           <p>Receive updates, access to deals and more...</p>
-          <form action='#'>
-            <input className="footer-newsletter-input" type="email" placeholder="Enter your email" />
+          <form onSubmit={(e) => handleNewsletterUser(e)}>
+            <input 
+              className="footer-newsletter-input"
+              type="email"
+              placeholder="Enter your email"
+              value={newsletterUser}
+              onChange={(e) => setNewsletterUser(e.target.value)}
+              />
           </form>
         </div>
       </div>

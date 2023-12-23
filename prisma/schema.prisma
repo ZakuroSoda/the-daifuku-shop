@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model newsletter_user {
+  user_id     Int      @id @default(autoincrement())
+  email       String   @db.VarChar(320)
+  subscribed  Boolean  @default(true)
+  date_joined DateTime @default(now()) @db.DateTime(0)
+}

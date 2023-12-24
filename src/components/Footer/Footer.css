@@ -21,11 +21,6 @@
     padding: 2rem 2rem 1rem 2rem;
 }
 
-.footer-section a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
 .footer-section.about {
     flex-basis: 50%;
 }

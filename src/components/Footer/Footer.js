@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import './Footer.css';
 
+import Link from '../Link/Link';
+
 import discordIcon from './discord-icon.svg';
 import instagramIcon from './instagram-icon.svg';
 import emailIcon from './email-icon.svg';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
 
 
 function Footer() {
@@ -67,17 +66,17 @@ function Footer() {
 
           <div className="footer-section info">
             <ul className="footer-list">
-              <li><a href="#">Partnerships</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">FAQ</a></li>
+              <li><Link underlineLength="50%" href="#" content="Partnerships" color="white" bold={false}/></li>
+              <li><Link underlineLength="50%" href="#" content="Careers" color="white" bold={false}/></li>
+              <li><Link underlineLength="50%" href="#" content="FAQs" color="white" bold={false}/></li>
             </ul>
           </div>
 
           <div className="footer-section legal">
             <ul className="footer-list">
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Refund Policy</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><Link underlineLength="50%" href="#" content="Terms of Service" color="white" bold={false}/></li>
+              <li><Link underlineLength="50%" href="#" content="Refund Policy" color="white" bold={false}/></li>
+              <li><Link underlineLength="50%" href="#" content="Privacy Policy" color="white" bold={false}/></li>
             </ul>
           </div>
 

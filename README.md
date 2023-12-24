@@ -12,3 +12,5 @@
 1. Database: snake_case
 2. JavaScript: camelCase
 3. API Route: kebab-case
+
+Due to "legacy" reasons, the / route for the website is at src/app.

@@ -1,6 +1,8 @@
 import React from 'react';
 import './Navbar.css';
 
+import Link from '../Link/Link';
+
 import account from './account.svg';
 import cart from './cart.svg';
 import flag from './singapore.svg';
@@ -11,7 +13,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-shop">
-          <a href="#">Shop</a>
+          <Link href="#" content="Shop" color="black" bold={true} />
         </div>
         <div className="navbar-logo">
           <a href="/">

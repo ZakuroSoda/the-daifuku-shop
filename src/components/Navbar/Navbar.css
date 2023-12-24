@@ -23,30 +23,6 @@
     min-height: 22px;
 }
 
-.navbar-shop a {
-    color: #000000;
-    text-decoration: none;
-    position: relative;
-    font-weight: bold;
-}
-
-.navbar-shop a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1px;
-    background-color: #000000;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    transition: width 0.3s ease;
-}
-
-.navbar-shop a:hover::after {
-    width: 100%;
-}
-
-
 .navbar-nav {
     list-style: none;
     display: flex;

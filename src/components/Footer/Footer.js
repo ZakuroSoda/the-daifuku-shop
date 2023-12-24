@@ -5,6 +5,13 @@ import discordIcon from './discord-icon.svg';
 import instagramIcon from './instagram-icon.svg';
 import emailIcon from './email-icon.svg';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
+
+
 function Footer() {
 
   const [newsletterUser, setNewsletterUser] = useState(''); 
@@ -12,7 +19,34 @@ function Footer() {
   function handleNewsletterUser(e) {
     e.preventDefault();
     setNewsletterUser(e.target.value);
-    console.log(newsletterUser);
+    if (!newsletterUser) return;
+
+    const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; // email regex
+    if (!pattern.test(newsletterUser)) {
+      toast.dismiss();
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+
+    fetch('/api/new-newsletter-user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ newsletterUser: newsletterUser })
+    })
+    .then(res => res.status)
+    .then(status => {
+      if (status === 200) {
+        toast.dismiss();
+        toast.success('Thank you for subscribing!');
+      } else {
+        toast.dismiss();
+        toast.error('Something went wrong. Please try again.');
+      }
+    })
+
+    setNewsletterUser('');
   }
 
   return (
@@ -63,6 +97,9 @@ function Footer() {
           </form>
         </div>
       </div>
+      <ToastContainer 
+        position="bottom-right"
+      />
     </>
   );
 }

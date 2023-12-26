@@ -38,6 +38,7 @@
 
 .navbar-icon {
     height: 18px;
+    cursor: pointer;
 }
 
 .navbar-icon-logo {

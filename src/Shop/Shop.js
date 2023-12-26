@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './Shop.css';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-
+import Cart from '../components/Cart/Cart';
 import Menu from './Menu/Menu';
 
 import AOS from 'aos';
@@ -14,13 +14,16 @@ function Shop() {
     AOS.init();
   }, []);
 
+  const [cartVisible, setCartVisible] = useState(false);
+
   return (
-    <div className="shop">
-      <Navbar />
+    <div className="Shop">
+      <Navbar setCartVisible={setCartVisible} />
       <div className="body">
         <Menu />
       </div>
       <Footer />
+      <Cart cartVisible={cartVisible} setCartVisible={setCartVisible} />
     </div>
   );
 }

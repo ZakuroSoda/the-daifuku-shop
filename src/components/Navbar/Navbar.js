@@ -13,7 +13,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-shop">
-          <Link href="#" content="Shop" color="black" bold={true} />
+          <Link href="/shop" content="Shop" color="black" bold={true} />
         </div>
         <div className="navbar-logo">
           <a href="/">

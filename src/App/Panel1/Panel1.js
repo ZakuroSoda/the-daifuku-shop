@@ -14,7 +14,7 @@ function Panel1() {
       <div className="panel1-card" data-aos="fade-down" data-aos-duration="1000">
         <div className="panel1-text">Our Signature</div>
         <div className="panel1-header">DAIFUKU</div>
-        <a href="#" className="panel1-button">Buy Now</a>
+        <a href="/shop" className="panel1-button">Buy Now</a>
       </div>
     </div>
   );

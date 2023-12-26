@@ -1,12 +1,21 @@
+import React, { useEffect } from 'react';
+
 import './Shop.css';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 
 import Menu from './Menu/Menu';
 
-function App() {
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+function Shop() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div className="App">
+    <div className="shop">
       <Navbar />
       <div className="body">
         <Menu />
@@ -16,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default Shop;

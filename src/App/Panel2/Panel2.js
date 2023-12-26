@@ -11,14 +11,7 @@ import gluten from "./gluten.svg";
 import sugar from "./sugar.svg";
 import vegan from "./vegan.svg";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
 function Panel2() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <div className="panel2">
       <div className="panel2-list">

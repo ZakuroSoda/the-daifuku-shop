@@ -20,7 +20,7 @@ function Navbar({ cartVisible, setCartVisible }) {
           </a>
         </div>
         <ul className="navbar-nav">
-          <li><a href="#"><img src={account} className="navbar-icon" alt="account" /></a></li>
+          <li><a href="/account"><img src={account} className="navbar-icon" alt="account" /></a></li>
           <li><img onClick={ () => setCartVisible(!cartVisible) } src={cart} className="navbar-icon" alt="cart" /></li>
           <li><a href="#"><img src={flag} className="navbar-icon" alt="country" /></a></li>
         </ul>

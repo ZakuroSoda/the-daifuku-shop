@@ -1,0 +1,155 @@
+.cart {
+    height: 100%;
+    width: 30vw;
+    min-width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 10vh;
+    right: 0;
+    background-color: #F59EA6;
+    transition: 0.3s;
+
+    padding: 0 1.5rem;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+
+    font-size: 1.2rem;
+}
+
+.cart-title {
+    font-weight: bold;
+}
+
+.cart-close {
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-items {
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.cart-items table {
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.cart-items-header-item {
+    width: 60%;
+}
+
+.cart-items-header-price {
+    width: 40%;
+}
+
+.cart-items th {
+    border-bottom: 2px solid #333;
+}
+
+.cart-items-header {
+    font-weight: 200;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.cart-items-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.cart-items-item-image {
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 0.2rem;
+    border-radius: 20%;
+}
+
+.cart-items-item-text {
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.cart-items-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cart-items-price-text {
+    font-weight: 600;
+    margin: 0.5rem;
+}
+
+.quantity-box {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem;
+}
+
+.quantity-box div {
+    padding: 0.5rem;
+    border: 1px solid black;
+}
+
+.quantity-box div:first-child,
+.quantity-box div:last-child {
+    cursor: pointer;
+}
+
+.quantity-box div:first-child {
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+}
+
+.quantity-box div:last-child {
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+}
+
+.cart-checkout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10vh;
+}
+
+.cart-checkout-button {
+    padding: 0.6rem 1rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #48284A;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.cart-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cart-items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

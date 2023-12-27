@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar setCartVisible={setCartVisible} />
+      <Navbar cartVisible={cartVisible} setCartVisible={setCartVisible} />
       <div className="body">
         <Panel1 />
         <Panel2 />

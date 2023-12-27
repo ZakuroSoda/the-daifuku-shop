@@ -18,7 +18,7 @@ function Shop() {
 
   return (
     <div className="Shop">
-      <Navbar setCartVisible={setCartVisible} />
+      <Navbar cartVisible={cartVisible} setCartVisible={setCartVisible} />
       <div className="body">
         <Menu />
       </div>

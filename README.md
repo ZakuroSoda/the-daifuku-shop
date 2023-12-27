@@ -2,10 +2,11 @@
 
 ### Color Palette
 1. Primary: #F59EA6
-2. Primary-Light: #FFE1C6
-3. Secondary: #FFF7AE
-4. Accent: #48284A
-5. Accent-Light: #916C80
+2. Primary-Light-1: #FACACF
+3. Primary-Light-2: #FFE1C6
+4. Secondary: #FFF7AE
+5. Accent: #48284A
+6. Accent-Light: #916C80
 
 ### Standardisation
 

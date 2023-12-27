@@ -1,7 +1,6 @@
 import React from 'react';
 import './Cart.css';
 import cross from './cross.svg'
-import strawberry from './strawberry.jpg'
 
 function Cart({ cartVisible, setCartVisible }) {
   return (
@@ -40,7 +39,7 @@ function Cart({ cartVisible, setCartVisible }) {
               <tr>
                 <td>
                   <div className="cart-items-item">
-                    <img src={strawberry} alt="Item 1" className="cart-items-item-image" />
+                    <img src="/images/strawberry.jpg" alt="Item 1" className="cart-items-item-image" />
                     <div className="cart-items-item-text">Strawberry Mochi</div>
                   </div>
                 </td>
@@ -58,7 +57,7 @@ function Cart({ cartVisible, setCartVisible }) {
               <tr>
                 <td>
                   <div className="cart-items-item">
-                    <img src={strawberry} alt="Item 1" className="cart-items-item-image" />
+                    <img src="/images/strawberry.jpg" alt="Item 1" className="cart-items-item-image" />
                     <div className="cart-items-item-text">Strawberry Mochi</div>
                   </div>
                 </td>
@@ -76,7 +75,7 @@ function Cart({ cartVisible, setCartVisible }) {
               <tr>
                 <td>
                   <div className="cart-items-item">
-                    <img src={strawberry} alt="Item 1" className="cart-items-item-image" />
+                    <img src="/images/strawberry.jpg" alt="Item 1" className="cart-items-item-image" />
                     <div className="cart-items-item-text">Strawberry Mochi</div>
                   </div>
                 </td>
@@ -94,7 +93,7 @@ function Cart({ cartVisible, setCartVisible }) {
               <tr>
                 <td>
                   <div className="cart-items-item">
-                    <img src={strawberry} alt="Item 1" className="cart-items-item-image" />
+                    <img src="/images/strawberry.jpg" alt="Item 1" className="cart-items-item-image" />
                     <div className="cart-items-item-text">Strawberry Mochi</div>
                   </div>
                 </td>

@@ -6,7 +6,6 @@ import Link from '../Link/Link';
 import account from './account.svg';
 import cart from './cart.svg';
 import flag from './singapore.svg';
-import logo from './mochi-transparent.png';
 
 function Navbar({ cartVisible, setCartVisible }) {
   return (
@@ -17,7 +16,7 @@ function Navbar({ cartVisible, setCartVisible }) {
         </div>
         <div className="navbar-logo">
           <a href="/">
-            <img src={logo} className="navbar-icon-logo" alt="logo" />
+            <img src="/images/mochi-transparent.png" className="navbar-icon-logo" alt="logo" />
           </a>
         </div>
         <ul className="navbar-nav">

@@ -1,15 +1,63 @@
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
-model newsletter_user {
-  user_id     Int      @id @default(autoincrement())
-  email       String   @db.VarChar(320)
-  subscribed  Boolean  @default(true)
-  date_joined DateTime @default(now()) @db.DateTime(0)
+model NewsletterUser {
+    newsletter_user_id Int      @id @default(autoincrement())
+    email              String   @unique
+    subscribed         Boolean  @default(true)
+    date_joined        DateTime @default(now()) @db.DateTime(0)
+}
+
+model User {
+    user_id                Int       @id @default(autoincrement())
+    email                  String    @unique
+    password               String
+    full_name              String?
+    country                String?
+    state_city             String?
+    address                String?
+    postal_code            String?
+    phone_number           String?
+    cart                   Json      @default("{}")
+    orders                 Order[]
+    credit_card_number     String?
+    credit_card_expiration String?
+    credit_card_cvv        String?
+    date_created           DateTime  @default(now()) @db.DateTime(0)
+    last_action            DateTime?
+}
+
+model Product {
+    product_id  Int         @id @default(autoincrement())
+    name        String
+    description String
+    price       Float
+    stock       Int
+    OrderItem   OrderItem[]
+}
+
+model Order {
+    order_id     Int         @id @default(autoincrement())
+    date_created DateTime    @default(now())
+    status       String
+    total_price  Float
+    user_id      Int
+    user         User        @relation(fields: [user_id], references: [user_id])
+    order_items  OrderItem[]
+}
+
+model OrderItem {
+    order_item_id  Int     @id @default(autoincrement())
+    order_id       Int
+    order          Order   @relation(fields: [order_id], references: [order_id])
+    product_id     Int
+    product        Product @relation(fields: [product_id], references: [product_id])
+    quantity       Int
+    subtotal_price Float
 }

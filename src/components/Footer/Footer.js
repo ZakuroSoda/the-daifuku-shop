@@ -39,6 +39,9 @@ function Footer() {
       if (status === 200) {
         toast.dismiss();
         toast.success('Thank you for subscribing!');
+      } else if (status === 409) {
+        toast.dismiss();
+        toast.error('Already subscribed.');
       } else {
         toast.dismiss();
         toast.error('Something went wrong. Please try again.');

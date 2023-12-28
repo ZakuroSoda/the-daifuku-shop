@@ -3,10 +3,12 @@
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 
     gap: 2%; /* 100% - 32% * 3 = 4%, split this for the two gaps between three cards */
 
     background-color: #F59EA6;
+
+    min-height: 90vh;
 }

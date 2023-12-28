@@ -8,8 +8,9 @@ function Cart({ cartVisible, setCartVisible }) {
       <div
         className="cart"
         style={{
-          height: cartVisible ? "100%" : "0",
+          height: "100%",
           width: cartVisible ? "30vw" : "0",
+          visibility: cartVisible ? "visible" : "hidden",
           minWidth: cartVisible ? "400px" : "0",
           position: "fixed",
           zIndex: "1",

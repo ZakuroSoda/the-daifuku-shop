@@ -25,6 +25,7 @@ model User {
     postal_code            String?
     phone_number           String?
     cart                   Json      @default("{}")
+    // store the cart in both localstorage and db, if logged in, check db first then localstorage, else localstorage only
     orders                 Order[]
     credit_card_number     String?
     credit_card_expiration String?

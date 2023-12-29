@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Link({ href, content, color, bold }) {
+function Link({ href, content, color, bold, ...children }) {
   const [hover, setHover] = useState(false);
 
   return (
@@ -10,10 +10,12 @@ function Link({ href, content, color, bold }) {
         color: color,
         fontWeight: bold ? 'bold' : 'normal',
         textDecoration: 'none',
-        position: 'relative'
+        position: 'relative',
+        cursor: 'pointer',
       }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      {...children}
     >
       {content}
       <span

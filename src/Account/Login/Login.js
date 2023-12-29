@@ -2,8 +2,10 @@ import React from 'react';
 import './Login.css';
 import arrow from './arrow.svg';
 
+import Link from '../../components/Link/Link';
 
-function Login() {
+function Login({ page, setPage }) {
+  if (page !== 'login') return null;
   return (
     <div className="Login">
       <div className="login-header">Login</div>
@@ -20,6 +22,9 @@ function Login() {
           <label className="login-form-label" htmlFor="password">
             Password
           </label>
+        </div>
+        <div className="login-form-row">
+          No account? Click <Link onClick={() => setPage('signup')} content="here" bold={false} color="black"/> to register.
         </div>
         <div className="login-form-row">
           <a className="login-form-submit"><img src={arrow} className="login-form-submit-icon" /></a>

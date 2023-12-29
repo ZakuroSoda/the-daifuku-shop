@@ -7,9 +7,11 @@ const app = express();
 app.use(cors(), bodyParser.json());
 const PORT = process.env.EXPRESS_PORT;
 
+const auth = require('./api/auth/auth');
 const newNewsletterUser = require('./api/new-newsletter-user');
 const getProducts = require('./api/get-products');
 
+app.use('/api/auth', auth);
 app.use('/api/new-newsletter-user', newNewsletterUser);
 app.use('/api/get-products', getProducts);
 

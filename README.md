@@ -15,3 +15,5 @@
 3. API Route: kebab-case
 
 Due to "legacy" reasons, the / route for the website is at src/app.
+
+Do NOT return messages in the API, ONLY status codes/tokens. Messages like "Success!" should come from front-end.

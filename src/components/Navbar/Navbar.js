@@ -1,7 +1,8 @@
 import React from 'react';
 import './Navbar.css';
 
-import Link from '../Link/Link';
+import CustomLink from '../Link/Link';
+import { Link } from 'react-router-dom';
 
 import account from './account.svg';
 import cart from './cart.svg';
@@ -12,15 +13,17 @@ function Navbar({ cartVisible, setCartVisible }) {
     <>
       <nav className="navbar">
         <div className="navbar-shop">
-          <Link href="/shop" content="Shop" color="black" bold={true} />
+          <Link to="/shop" style={{textDecoration: "none"}}>
+            <CustomLink href="/shop" content="Shop" color="black" bold={true} />
+          </Link>
         </div>
         <div className="navbar-logo">
-          <a href="/">
+          <Link to="/">
             <img src="/images/mochi-transparent.png" className="navbar-icon-logo" alt="logo" />
-          </a>
+          </Link>
         </div>
         <ul className="navbar-nav">
-          <li><a href="/account"><img src={account} className="navbar-icon" alt="account" /></a></li>
+          <li><Link to="/account"><img src={account} className="navbar-icon" alt="account" /></Link></li>
           <li><img onClick={ () => setCartVisible(!cartVisible) } src={cart} className="navbar-icon" alt="cart" /></li>
           <li><a href="#"><img src={flag} className="navbar-icon" alt="country" /></a></li>
         </ul>

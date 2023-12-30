@@ -7,6 +7,9 @@ import Shop from './Shop/Shop';
 import Account from './Account/Account';
 import Error from './Error/Error';
 
+import { UserProvider } from './components/Context/UserContext';
+import { CartVisibleProvider } from './components/Context/CartVisibleContext';
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -31,6 +34,10 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserProvider>
+    <CartVisibleProvider>
+      <RouterProvider router={router} />
+    </CartVisibleProvider>
+    </UserProvider>
   </React.StrictMode>
 );

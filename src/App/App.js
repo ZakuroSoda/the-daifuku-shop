@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { UserContext } from '../components/Context/UserContext';
+import { CartVisibleContext } from '../components/Context/CartVisibleContext';
 
 import './App.css';
 import Navbar from '../components/Navbar/Navbar';
@@ -13,11 +15,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function App() {
+  const { cartVisible, setCartVisible } = useContext(CartVisibleContext);
+  const { user, setUser } = useContext(UserContext);
+  
   useEffect(() => {
     AOS.init();
   }, []);
-
-  const [cartVisible, setCartVisible] = useState(false);
 
   return (
     <div className="App">

@@ -54,7 +54,12 @@ router.post('/login', (req, res) => {
             token: token,
           },
         })
-        res.status(200).send(token);
+        .then((user) => {
+          res.status(200).send(token);
+        })
+        .catch((err) => {
+          res.status(500).send();
+        });
       } else {
         res.status(401).send(); // wrong password
       }
@@ -87,7 +92,12 @@ router.post('/signup', (req, res) => {
         token: token,
       },
     })
-    res.status(200).send(token);
+    .then((user) => {
+      res.status(200).send(token);
+    })
+    .catch((err) => {
+      res.status(500).send();
+    });
   }).catch((err) => {
     if (err instanceof Prisma.PrismaClientKnownRequestError) {
       if (err.code === 'P2002') {

@@ -22,8 +22,8 @@ function Account() {
     <div className="Account">
       <Navbar cartVisible={cartVisible} setCartVisible={setCartVisible} />
       <div className="body">
-        <Login page={page} setPage={setPage} />
-        <Signup page={page} setPage={setPage} />
+        <Login page={page} setPage={setPage} setUser={setUser} />
+        <Signup page={page} setPage={setPage} setUser={setUser} />
       </div>
       <Footer />
       <Cart cartVisible={cartVisible} setCartVisible={setCartVisible} />

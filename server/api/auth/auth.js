@@ -48,7 +48,7 @@ router.post('/login', (req, res) => {
         const token = createToken();
         prisma.user.update({
           where: {
-            username: username,
+            email: email,
           },
           data: {
             token: token,
@@ -61,7 +61,8 @@ router.post('/login', (req, res) => {
     } else {
       res.status(401).send(); // user not found
     }
-  }).catch((err) => {
+  })
+  .catch((err) => {
     res.status(500).send();
   });
 });

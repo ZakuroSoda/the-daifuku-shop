@@ -13,16 +13,16 @@ const prisma = new PrismaClient();
 router.post('/', (req, res) => {
   const token = req.body.token;
 
-  prisma.user.findUnique({
+  prisma.user.findFirst({
     where: {
       token: token,
     },
     select: {
-      username: true,
+      email: true,
     },
   }).then((user) => {
     if (user) {
-      res.status(200).send(user.username);
+      res.status(200).send(user.email);
     } else {
       res.status(401).send(); // user not found
     }

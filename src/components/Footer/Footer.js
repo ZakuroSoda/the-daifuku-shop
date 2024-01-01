@@ -7,9 +7,7 @@ import discordIcon from './discord-icon.svg';
 import instagramIcon from './instagram-icon.svg';
 import emailIcon from './email-icon.svg';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { toast } from 'react-toastify';
 
 function Footer() {
 
@@ -99,9 +97,6 @@ function Footer() {
           </form>
         </div>
       </div>
-      <ToastContainer 
-        position="bottom-right"
-      />
     </>
   );
 }

@@ -4,8 +4,7 @@ import arrow from './arrow.svg';
 
 import Link from '../../components/Link/Link';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 function Signup({ page, setPage, setUser }) {
 
@@ -102,9 +101,6 @@ function Signup({ page, setPage, setUser }) {
           </div>
         </form>
       </div>
-      <ToastContainer 
-        position="bottom-right"
-      />
     </>
   );
 }

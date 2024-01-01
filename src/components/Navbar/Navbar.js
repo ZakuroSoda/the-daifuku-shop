@@ -1,12 +1,11 @@
 import React from 'react';
-import './Navbar.css';
-
-import CustomLink from '../Link/Link';
 import { Link } from 'react-router-dom';
-
+import CustomLink from '../Link/Link';
 import account from './account.svg';
 import cart from './cart.svg';
 import flag from './singapore.svg';
+import './Navbar.css';
+
 
 function Navbar({ cartVisible, setCartVisible }) {
   return (

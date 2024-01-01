@@ -1,9 +1,8 @@
 import React from "react";
-import "./Panel2.css";
-
 import gluten from "./gluten.svg";
 import sugar from "./sugar.svg";
 import vegan from "./vegan.svg";
+import "./Panel2.css";
 
 function Panel2() {
   return (

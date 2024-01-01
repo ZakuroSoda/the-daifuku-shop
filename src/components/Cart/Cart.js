@@ -1,6 +1,6 @@
 import React from 'react';
-import './Cart.css';
 import cross from './cross.svg'
+import './Cart.css';
 
 function Cart({ cartVisible, setCartVisible }) {
   return (

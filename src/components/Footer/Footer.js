@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import './Footer.css';
-
+import { toast } from 'react-toastify';
 import Link from '../Link/Link';
-
 import discordIcon from './discord-icon.svg';
 import instagramIcon from './instagram-icon.svg';
 import emailIcon from './email-icon.svg';
-
-import { toast } from 'react-toastify';
+import './Footer.css';
 
 function Footer() {
 

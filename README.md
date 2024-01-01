@@ -10,9 +10,22 @@
 
 ### Standardisation
 
+#### Casing
+
 1. Database: snake_case
 2. JavaScript: camelCase
-3. API Route: kebab-case
+3. Components: PascalCase
+4. API Route: kebab-case
+
+#### Imports
+
+1. node builtin modules
+2. external modules
+3. modules from a parent directory
+4. sibling modules from the same or child directory
+5. index of the current directory
+
+#### Others
 
 Due to "legacy" reasons, the / route for the website is at src/app.
 

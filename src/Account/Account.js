@@ -1,15 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
-
+import React, { useState, useContext } from 'react';
 import { UserContext } from '../components/Context/UserContext';
 import { CartVisibleContext } from '../components/Context/CartVisibleContext';
-
-import './Account.css';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Cart from '../components/Cart/Cart';
-
 import Login from './Login/Login';
 import Signup from './Signup/Signup'
+import './Account.css';
 
 function Account() {
 

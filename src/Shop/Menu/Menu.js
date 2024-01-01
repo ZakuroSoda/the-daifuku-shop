@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import './Menu.css';
-
 import Card from "./Card/Card";
+import './Menu.css';
 
 function Menu() {
 

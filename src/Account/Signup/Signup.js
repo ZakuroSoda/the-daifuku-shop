@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import './Signup.css';
-import arrow from './arrow.svg';
-
-import Link from '../../components/Link/Link';
-
 import { toast } from 'react-toastify';
+import Link from '../../components/Link/Link';
+import arrow from './arrow.svg';
+import './Signup.css';
 
 function Signup({ page, setPage, setUser }) {
 

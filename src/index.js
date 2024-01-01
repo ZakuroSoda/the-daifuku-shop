@@ -1,22 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { UserProvider } from './components/Context/UserContext';
+import { CartVisibleProvider } from './components/Context/CartVisibleContext';
 import App from './App/App';
 import Shop from './Shop/Shop';
 import Account from './Account/Account';
 import Error from './Error/Error';
-
-import { UserProvider } from './components/Context/UserContext';
-import { CartVisibleProvider } from './components/Context/CartVisibleContext';
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +28,8 @@ const router = createBrowserRouter([
     element: <Account />,
   },
 ]);
+
+AOS.init();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

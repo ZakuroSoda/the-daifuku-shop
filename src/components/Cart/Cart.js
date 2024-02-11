@@ -1,8 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
+import { UserContext } from '../Context/UserContext';
 import cross from './cross.svg'
 import './Cart.css';
 
 function Cart({ cartVisible, setCartVisible }) {
+
+  const { user, setUser } = useContext(UserContext);
+
   return (
     <>
       <div
@@ -36,60 +41,6 @@ function Cart({ cartVisible, setCartVisible }) {
               <tr>
                 <th className="cart-items-header">Item</th>
                 <th className="cart-items-header">Price</th>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cart-items-item">
-                    <img src="/images/strawberry.jpg" alt="Item 1" className="cart-items-item-image" />
-                    <div className="cart-items-item-text">Strawberry Mochi</div>
-                  </div>
-                </td>
-                <td>
-                  <div className="cart-items-price">
-                    <div className="cart-items-price-text">$1.00</div>
-                    <div className="quantity-box">
-                      <div>-</div>
-                      <div>1</div>
-                      <div>+</div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cart-items-item">
-                    <img src="/images/strawberry.jpg" alt="Item 1" className="cart-items-item-image" />
-                    <div className="cart-items-item-text">Strawberry Mochi</div>
-                  </div>
-                </td>
-                <td>
-                  <div className="cart-items-price">
-                    <div className="cart-items-price-text">$1.00</div>
-                    <div className="quantity-box">
-                      <div>-</div>
-                      <div>1</div>
-                      <div>+</div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cart-items-item">
-                    <img src="/images/strawberry.jpg" alt="Item 1" className="cart-items-item-image" />
-                    <div className="cart-items-item-text">Strawberry Mochi</div>
-                  </div>
-                </td>
-                <td>
-                  <div className="cart-items-price">
-                    <div className="cart-items-price-text">$1.00</div>
-                    <div className="quantity-box">
-                      <div>-</div>
-                      <div>1</div>
-                      <div>+</div>
-                    </div>
-                  </div>
-                </td>
               </tr>
               <tr>
                 <td>

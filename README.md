@@ -1,6 +1,11 @@
 # The Daifuku Shop - Divine Daifuku
 
-### Color Palette
+### Todo
+- [ ] /account: on login, details are not loaded, state must be refreshed to be seen
+
+### Standardisation
+
+#### Color Palette
 1. Primary: #F59EA6
 2. Primary-Light-1: #FACACF
 3. Primary-Light-2: #FFE1C6
@@ -8,7 +13,6 @@
 5. Accent: #48284A
 6. Accent-Light: #916C80
 
-### Standardisation
 
 #### Casing
 
@@ -17,10 +21,10 @@
 3. Components: PascalCase
 4. API Route: kebab-case
 
-#### Imports
+#### Imports (order)
 
 1. node builtin modules
-2. external modules
+2. external modules (npm installed)
 3. modules from a parent directory
 4. sibling modules from the same or child directory
 5. index of the current directory

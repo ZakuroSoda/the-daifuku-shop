@@ -30,14 +30,13 @@ function UserProvider({ children }) {
         .then((user) => {
           if (user) {
             setUser(user);
-            console.log('User logged in: ', user);
           }
         })
         .catch((err) => {
           console.log(err);
         });
     }
-  }, []);
+  }, [user]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

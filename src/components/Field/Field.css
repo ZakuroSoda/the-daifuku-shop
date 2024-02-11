@@ -1,0 +1,92 @@
+.Field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+  .Field {
+      width: 100%;
+  }
+}
+
+.Field-row {
+  position: relative;
+}
+
+.Field-input {
+  width: 100%;
+  padding: 16px 10px 8px 10px;
+  border: 1px solid #595959;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #FACACF;
+  position: relative;
+}
+
+.Field-input:focus,
+.Field-input:active {
+  outline: none;
+  border: 1px solid #000000;
+}
+
+.Field-label {
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 0 0.2rem;
+
+  position: absolute;
+  pointer-events: none;
+  top: calc((16px + 8px + 1rem)/2); /* Top, bottom padding + font size divided by two to center vert*/
+  left: 10px;
+  transition: top 0.3s, font-size 0.3s, color 0.3s;
+  transform: translateY(-50%);
+  color: #595959;
+  background-color: #FACACF;
+}
+
+
+.Field-input:focus + .Field-label,
+.Field-input:active + .Field-label,
+.Field-input:not(:placeholder-shown) + .Field-label {
+  top: 0px;
+  font-size: 0.7rem;
+  color: #000000;
+}
+
+.Field-submit {
+  padding: 0.6rem 1rem;
+  height: calc(24px + 1rem); /* Top, bottom padding + font size */
+  width: 12%;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #48284A;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: calc((16px + 8px + 1rem)/2); /* Top, bottom padding + font size divided by two to center vert*/
+  right: 0px;
+  transition: top 0.3s, font-size 0.3s, color 0.3s;
+  transform: translateY(-50%);
+}
+
+.Field-submit:hover {
+  background-color: #3b1c3e;
+}
+
+.Field-submit-icon {
+  height: 1em;
+  width: 5em;
+}
+
+.Field-input:focus + .Field-submit,
+.Field-input:active + .Field-submit,
+.Field-input:not(:placeholder-shown) + .Field-submit {
+  visibility: visible;
+}

@@ -19,10 +19,19 @@ router.post('/', (req, res) => {
     },
     select: {
       email: true,
+      full_name: true,
+      country: true,
+      state_city: true,
+      address: true,
+      postal_code: true,
+      phone_number: true,
+      credit_card_number: true,
+      credit_card_expiration: true,
+      credit_card_cvv: true,
     },
   }).then((user) => {
     if (user) {
-      res.status(200).send(user.email);
+      res.status(200).send(user);
     } else {
       res.status(401).send(); // user not found
     }

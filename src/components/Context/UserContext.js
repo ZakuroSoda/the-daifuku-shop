@@ -23,14 +23,14 @@ function UserProvider({ children }) {
       })
         .then((res) => {
           if (res.status === 200) {
-            return res.text();
+            return res.json();
           }
           return;
         })
-        .then((email) => {
-          if (email) {
-            setUser(email);
-            console.log('User logged in: ', email);
+        .then((user) => {
+          if (user) {
+            setUser(user);
+            console.log('User logged in: ', user);
           }
         })
         .catch((err) => {

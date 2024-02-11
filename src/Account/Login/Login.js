@@ -93,7 +93,7 @@ function Login({ page, setPage, setUser }) {
             </label>
           </div>
           <div className="login-form-row">
-            No account? Click <Link onClick={() => setPage('signup')} content="here" bold={false} color="black" /> to register.
+            No account? Click <Link onClick={() => setPage('signup')} content="here to register" bold={false} color="black" />.
           </div>
           <div className="login-form-row">
             <button type="submit" className="login-form-submit"><img src={arrow} className="login-form-submit-icon" /></button>

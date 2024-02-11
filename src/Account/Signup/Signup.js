@@ -92,7 +92,7 @@ function Signup({ page, setPage, setUser }) {
             </label>
           </div>
           <div className="login-form-row">
-            Already registered? Click <Link onClick={() => setPage('login')} content="here" bold={false} color="black" /> to login.
+            Already registered? Click <Link onClick={() => setPage('login')} content="here to login" bold={false} color="black" />.
           </div>
           <div className="signup-form-row">
             <button type="submit" className="signup-form-submit"><img src={arrow} className="signup-form-submit-icon" /></button>

@@ -1,0 +1,15 @@
+.Settings {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FACACF;
+    padding: 10vh 10vw;
+    gap: 1rem;
+}
+
+.settings-header {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}

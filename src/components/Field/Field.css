@@ -57,16 +57,17 @@
 
 .Field-submit {
   padding: 0.6rem 1rem;
-  height: calc(24px + 1rem); /* Top, bottom padding + font size */
+  height: calc(16px + 8px + 1rem);
   width: 12%;
-  border-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #48284A;
-  color: #FFFFFF;
-  border: none;
+  background-color: #FACACF;
+  border: 1px solid #595959;
+  border-bottom: none;
   cursor: pointer;
 
   position: absolute;
@@ -74,10 +75,13 @@
   right: 0px;
   transition: top 0.3s, font-size 0.3s, color 0.3s;
   transform: translateY(-50%);
+
 }
 
 .Field-submit:hover {
-  background-color: #3b1c3e;
+  background-color: #cfa6ab;
+  border: 1px solid black;
+  border-bottom: none;
 }
 
 .Field-submit-icon {
@@ -85,8 +89,7 @@
   width: 5em;
 }
 
-.Field-input:focus + .Field-submit,
-.Field-input:active + .Field-submit,
-.Field-input:not(:placeholder-shown) + .Field-submit {
+.Field-input:focus ~ .Field-submit,
+.Field-input:active ~ .Field-submit {
   visibility: visible;
 }

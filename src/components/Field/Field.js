@@ -7,9 +7,14 @@ function Field({type, name, value, label, submitFn}) {
 
   const [content, setContent] = useState(value); 
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    submitFn(name, content);
+  }
+
   return (
     <>
-      <form className="Field">
+      <form className="Field" onSubmit={(e) => handleSubmit(e)}>
           <div className="Field-row">
             <input
               className="Field-input"
@@ -27,10 +32,10 @@ function Field({type, name, value, label, submitFn}) {
             </label>
             <button
               className="Field-submit"
-              type="button"
-              onClick={() => {
+              type="submit"
+              onClick={(e) => {
                 setContent(content);
-                submitFn(content);
+                handleSubmit(e);
               }}
             >
               <img className="Field-submit-icon" src={arrow} alt="" />

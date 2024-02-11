@@ -19,6 +19,7 @@ router.post('/', (req, res) => {
     },
     select: {
       email: true,
+      token: true,
       full_name: true,
       country: true,
       state_city: true,

@@ -64,17 +64,17 @@ function Footer() {
 
           <div className="footer-section info">
             <ul className="footer-list">
-              <li><Link underlineLength="50%" href="#" content="Partnerships" color="white" bold={false}/></li>
-              <li><Link underlineLength="50%" href="#" content="Careers" color="white" bold={false}/></li>
-              <li><Link underlineLength="50%" href="#" content="FAQs" color="white" bold={false}/></li>
+              <li><Link href="#" content="Partnerships" color="white" bold={false}/></li>
+              <li><Link href="#" content="Careers" color="white" bold={false}/></li>
+              <li><Link href="#" content="FAQs" color="white" bold={false}/></li>
             </ul>
           </div>
 
           <div className="footer-section legal">
             <ul className="footer-list">
-              <li><Link underlineLength="50%" href="#" content="Terms of Service" color="white" bold={false}/></li>
-              <li><Link underlineLength="50%" href="#" content="Refund Policy" color="white" bold={false}/></li>
-              <li><Link underlineLength="50%" href="#" content="Privacy Policy" color="white" bold={false}/></li>
+              <li><Link href="#" content="Terms of Service" color="white" bold={false}/></li>
+              <li><Link href="#" content="Refund Policy" color="white" bold={false}/></li>
+              <li><Link href="#" content="Privacy Policy" color="white" bold={false}/></li>
             </ul>
           </div>
 

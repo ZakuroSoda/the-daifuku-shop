@@ -44,8 +44,8 @@ function Login({ page, setPage, setUser }) {
     })
     .then(token => {
       if (!token) return;
-      document.cookie = `token=${token}`
-      setUser(email)
+      document.cookie = `token=${token}`;
+      setUser(email);
     })
 
     setEmail('');

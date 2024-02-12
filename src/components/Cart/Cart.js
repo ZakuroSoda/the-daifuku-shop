@@ -1,5 +1,6 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { UserContext } from '../Context/UserContext';
 import cross from './cross.svg'
 import './Cart.css';
@@ -7,6 +8,61 @@ import './Cart.css';
 function Cart({ cartVisible, setCartVisible }) {
 
   const { user, setUser } = useContext(UserContext);
+
+  const [cart, setCart] = useState(user?.cart ?? []); // for some reason i cant use ?? here
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.quantity;
+    });
+    setTotal(total);
+  }, [cart]);
+
+  useEffect(() => {
+    setCart(user?.cart ?? []);
+  }, [user]);
+
+  function updateItemQuantity(index, quantity) {
+    const newCart = cart.map((item, itemIndex) => {
+      if (itemIndex === index) {
+        return {
+          ...item,
+          quantity: quantity
+        }
+      }
+      return item;
+    })
+
+    setCart(newCart);
+    setUser({
+      ...user,
+      cart: newCart
+    });
+
+    fetch('/api/user/update-cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': user.token
+      },
+      body: JSON.stringify({ user, cart: newCart })
+    })
+      .then(res => {
+        if (res.status === 200) {
+        } else {
+          toast.dismiss();
+          toast.error('Something went wrong. Please try again.');
+          return
+        }
+        return res.json();
+      })
+      .then(user => {
+        if (!user) return;
+        setUser(user);
+      });
+  }
 
   return (
     <>
@@ -26,46 +82,58 @@ function Cart({ cartVisible, setCartVisible }) {
           padding: "0 1.5rem",
         }}
       >
-        {cartVisible && 
-        <>
-          <div className="cart-header">
-            <div className="cart-title">Your Cart</div>
-            <img src={cross} onClick={() => setCartVisible(false)} alt="Close" className="cart-close" />
-          </div>
-          <div className="cart-items">
-            <table>
-              <colgroup>
-                <col span="1" className="cart-items-header-item" />
-                <col span="1" className="cart-items-header-price" />
-              </colgroup>
-              <tr>
-                <th className="cart-items-header">Item</th>
-                <th className="cart-items-header">Price</th>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cart-items-item">
-                    <img src="/images/strawberry.jpg" alt="Item 1" className="cart-items-item-image" />
-                    <div className="cart-items-item-text">Strawberry Mochi</div>
-                  </div>
-                </td>
-                <td>
-                  <div className="cart-items-price">
-                    <div className="cart-items-price-text">$1.00</div>
-                    <div className="quantity-box">
-                      <div>-</div>
-                      <div>1</div>
-                      <div>+</div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div className="cart-checkout">
-            <a className="cart-checkout-button">Checkout &#183; $1.00 SGD</a>
-          </div>
-        </>
+        {cartVisible &&
+          <>
+            <div className="cart-header">
+              <div className="cart-title">Your Cart</div>
+              <img src={cross} onClick={() => setCartVisible(false)} alt="Close" className="cart-close" />
+            </div>
+            <div className="cart-items">
+              <table>
+                <colgroup>
+                  <col span="1" className="cart-items-header-item" />
+                  <col span="1" className="cart-items-header-price" />
+                </colgroup>
+                <tr>
+                  <th className="cart-items-header">Item</th>
+                  <th className="cart-items-header">Price</th>
+                </tr>
+
+                {cart.map((item, index) => (
+                  <tr key={index}>
+                    <td>
+                      <div className="cart-items-item">
+                        <img src={item.image_url} alt={`Item ${index}`} className="cart-items-item-image" />
+                        <div className="cart-items-item-text">{item.name}</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="cart-items-price">
+                        <div className="cart-items-price-text">${(item.price * item.quantity).toFixed(2)}</div>
+                        <div className="quantity-box">
+                          <div
+                            onClick={() => updateItemQuantity(index, item.quantity - 1)}
+                          >
+                            -
+                          </div>
+                          <div>{item.quantity}</div>
+                          <div
+                            onClick={() => updateItemQuantity(index, item.quantity + 1)}
+                          >
+                            +
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+
+              </table>
+            </div>
+            <div className="cart-checkout">
+              <a className="cart-checkout-button">Checkout &#183; ${total.toFixed(2)} SGD</a>
+            </div>
+          </>
         }
       </div>
     </>

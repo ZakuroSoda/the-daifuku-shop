@@ -9,7 +9,12 @@ function Card(props) {
         <div className="card-body">
           <div className="card-body-title">{props.name}</div>
           <div className="card-body-text">${props.price}</div>
-          <div className="card-body-button">Add to Cart</div>
+          <div
+            className="card-body-button"
+            onClick={() => props.addToCart()}
+          >
+            Add to Cart
+          </div>
         </div>
       </div>
     </>

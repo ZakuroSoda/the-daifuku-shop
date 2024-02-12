@@ -15,7 +15,7 @@ function Shop() {
     <div className="Shop">
       <Navbar cartVisible={cartVisible} setCartVisible={setCartVisible} />
       <div className="body">
-        <Menu />
+        <Menu user={user} setUser={setUser} cartVisible={cartVisible} setCartVisible={setCartVisible} />
       </div>
       <Footer />
       <Cart cartVisible={cartVisible} setCartVisible={setCartVisible} />

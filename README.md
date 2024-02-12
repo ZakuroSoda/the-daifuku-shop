@@ -1,7 +1,7 @@
 # The Daifuku Shop - Divine Daifuku
 
 ### Todo
-- [ ] /account: on login, details are not loaded, state must be refreshed to be seen
+- [X] /account: on login, details are not loaded, state must be refreshed to be seen
 
 ### Standardisation
 

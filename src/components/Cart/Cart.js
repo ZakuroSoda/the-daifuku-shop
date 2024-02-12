@@ -96,7 +96,9 @@ function Cart({ cartVisible, setCartVisible }) {
               <img src={cross} onClick={() => setCartVisible(false)} alt="Close" className="cart-close" />
             </div>
             {cart.length === 0 ?
-              <div className="cart-items">Your cart is empty</div>
+              <div className="cart-items">
+                {user ? "Your cart is empty" : "Log in to see your cart"}
+              </div>
               :
               <div className="cart-items">
                 <table>

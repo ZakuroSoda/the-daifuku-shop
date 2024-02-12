@@ -41,12 +41,12 @@ function Signup({ page, setPage, setUser }) {
           toast.error('Something went wrong. Please try again.');
           return
         }
-        return res.text();
+        return res.json();
       })
-      .then(token => {
-        if (!token) return;
-        document.cookie = `token=${token}`
-        setUser(email)
+      .then(user => {
+        if (!user?.token) return;
+        document.cookie = `token=${user.token}`
+        setUser(user)
       })
 
     setEmail('');

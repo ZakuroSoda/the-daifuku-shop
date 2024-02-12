@@ -66,7 +66,7 @@ router.post('/login', (req, res) => {
           },
         })
         .then((user) => {
-          res.status(200).send(token);
+          res.status(200).send(user);
         })
         .catch((err) => {
           res.status(500).send();
@@ -104,7 +104,7 @@ router.post('/signup', (req, res) => {
       },
     })
     .then((user) => {
-      res.status(200).send(token);
+      res.status(200).send(user);
     })
     .catch((err) => {
       res.status(500).send();

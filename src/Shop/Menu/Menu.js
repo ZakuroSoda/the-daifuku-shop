@@ -24,6 +24,12 @@ function Menu({ user, setUser, cartVisible, setCartVisible }) {
   }, [products]);
 
   function addToCart(user, productId) {
+    if (!user) {
+      toast.dismiss()
+      toast.error('You must be logged in to add an item to cart.');
+      return;
+    }
+
     fetch('/api/user/add-to-cart', {
       method: 'POST',
       headers: {

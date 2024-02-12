@@ -6,11 +6,14 @@ const prisma = new PrismaClient();
 
 router.get('/', (req, res) => {
   prisma.product.findMany({
+    where: {
+      visible: true,
+    },
     select: {
       product_id: true,
       name: true,
       price: true,
-      stock: true,
+      out_of_stock: true,
       image_url: true,
     }
   })

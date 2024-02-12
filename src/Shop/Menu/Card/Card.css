@@ -19,6 +19,12 @@
     border-radius: 10px;
 }
 
+.card-image-disabled {
+  width: 100%;
+  border-radius: 10px;
+  filter: grayscale(75%);
+}
+
 .card-body {
     padding: 5%;
 }
@@ -50,4 +56,15 @@
 
 .card-body-button:hover {
     background-color: #3b1c3e;
+}
+
+.card-body-button-disabled {
+  margin-top: 2vh;
+  width:fit-content;
+  padding: 2vh 4vh;
+  border: none;
+  border-radius: 10px;
+  background-color: #595959;
+  color: #FFFFFF;
+  text-decoration: none;
 }

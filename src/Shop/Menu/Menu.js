@@ -50,22 +50,34 @@ function Menu({ user, setUser, cartVisible, setCartVisible }) {
       })
   }
 
-return (
-  <div className="menu">
-    {products.map(product => {
-      return (
-        <Card
-          key={product.product_id}
-          name={product.name}
-          stock={product.stock}
-          price={product.price}
-          image_url={product.image_url}
-          addToCart={() => addToCart(user, product.product_id)}
-        />
-      );
-    })}
-  </div>
-);
+  return (
+    <div className="menu">
+      {products
+        .sort((a, b) => {
+          if (a.out_of_stock && !b.out_of_stock) {
+            return 1;
+          } else if (!a.out_of_stock && b.out_of_stock) {
+            return -1;
+          } else {
+            return 0;
+          }
+        })
+        .map(product => {
+          return (
+            <Card
+              key={product.product_id}
+              name={product.name}
+              stock={product.stock}
+              price={product.price}
+              outOfStock={product.out_of_stock}
+              image_url={product.image_url}
+              addToCart={() => addToCart(user, product.product_id)}
+            />
+          );
+        })
+      }
+    </div>
+  );
 }
 
 export default Menu;

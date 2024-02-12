@@ -25,15 +25,22 @@ function Cart({ cartVisible, setCartVisible }) {
   }, [user]);
 
   function updateItemQuantity(index, quantity) {
-    const newCart = cart.map((item, itemIndex) => {
-      if (itemIndex === index) {
-        return {
-          ...item,
-          quantity: quantity
+    let newCart;
+
+    if (quantity < 1) {
+      newCart = cart.filter((item, itemIndex) => itemIndex !== index);
+    }
+    else {
+      newCart = cart.map((item, itemIndex) => {
+        if (itemIndex === index) {
+          return {
+            ...item,
+            quantity: quantity
+          }
         }
-      }
-      return item;
-    })
+        return item;
+      })
+    }
 
     setCart(newCart);
     setUser({
@@ -88,48 +95,52 @@ function Cart({ cartVisible, setCartVisible }) {
               <div className="cart-title">Your Cart</div>
               <img src={cross} onClick={() => setCartVisible(false)} alt="Close" className="cart-close" />
             </div>
-            <div className="cart-items">
-              <table>
-                <colgroup>
-                  <col span="1" className="cart-items-header-item" />
-                  <col span="1" className="cart-items-header-price" />
-                </colgroup>
-                <tr>
-                  <th className="cart-items-header">Item</th>
-                  <th className="cart-items-header">Price</th>
-                </tr>
+            {cart.length === 0 ?
+              <div className="cart-items">Your cart is empty</div>
+              :
+              <div className="cart-items">
+                <table>
+                  <colgroup>
+                    <col span="1" className="cart-items-header-item" />
+                    <col span="1" className="cart-items-header-price" />
+                  </colgroup>
+                  <tr>
+                    <th className="cart-items-header">Item</th>
+                    <th className="cart-items-header">Price</th>
+                  </tr>
 
-                {cart.map((item, index) => (
-                  <tr key={index}>
-                    <td>
-                      <div className="cart-items-item">
-                        <img src={item.image_url} alt={`Item ${index}`} className="cart-items-item-image" />
-                        <div className="cart-items-item-text">{item.name}</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="cart-items-price">
-                        <div className="cart-items-price-text">${(item.price * item.quantity).toFixed(2)}</div>
-                        <div className="quantity-box">
-                          <div
-                            onClick={() => updateItemQuantity(index, item.quantity - 1)}
-                          >
-                            -
-                          </div>
-                          <div>{item.quantity}</div>
-                          <div
-                            onClick={() => updateItemQuantity(index, item.quantity + 1)}
-                          >
-                            +
+                  {cart.map((item, index) => (
+                    <tr key={index}>
+                      <td>
+                        <div className="cart-items-item">
+                          <img src={item.image_url} alt={`Item ${index}`} className="cart-items-item-image" />
+                          <div className="cart-items-item-text">{item.name}</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="cart-items-price">
+                          <div className="cart-items-price-text">${(item.price * item.quantity).toFixed(2)}</div>
+                          <div className="quantity-box">
+                            <div
+                              onClick={() => updateItemQuantity(index, item.quantity - 1)}
+                            >
+                              -
+                            </div>
+                            <div>{item.quantity}</div>
+                            <div
+                              onClick={() => updateItemQuantity(index, item.quantity + 1)}
+                            >
+                              +
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                    </tr>
+                  ))}
 
-              </table>
-            </div>
+                </table>
+              </div>
+            }
             <div className="cart-checkout">
               <a className="cart-checkout-button">Checkout &#183; ${total.toFixed(2)} SGD</a>
             </div>
